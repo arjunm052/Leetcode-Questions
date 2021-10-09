@@ -16,6 +16,7 @@ public class comb {
 
     // Classic backtracking problem
     // We either pick the number or we dont
+    // Multiple pickings allowed in this VERSION
     public static void findCombination(int index, int[] arr, int target, List<List<Integer>> res, List<Integer> ds) {
         // If we have exhausted the array and the target has also become then we have
         // got the combination. Just return from there
@@ -37,5 +38,35 @@ public class comb {
         }
         // Recursive call for when we don't pick the current number
         findCombination(index + 1, arr, target, res, ds);
+    }
+
+    // In this COMBINATION-II Problem we are only allowed to pick the number once
+    public static void findUniqueCombinations(int index, int[] arr, int target, List<List<Integer>> res,
+            List<Integer> ds) {
+        // If target has become zero then we have found the number
+        if (target == 0) {
+            res.add(new ArrayList<>(ds));
+            return;
+        }
+
+        // Iterate over all the indexes and once we pick an element we can't pick it
+        // again as the starting index
+        for (int i = index; i < arr.length; i++) {
+            // If an element is picked it can't be picked again as a starting index for that
+            // recursion branch
+            if (i > index && arr[i] == arr[i - 1])
+                continue;
+            // Not possible to pick that element
+            if (arr[index] > target)
+                break;
+
+            // Pick the element
+            ds.add(arr[i]);
+            // Make the next recursive call
+            findUniqueCombinations(index + 1, arr, target - arr[i], res, ds);
+            // Remove that element
+            ds.remove(ds.size() - 1);
+        }
+
     }
 }
