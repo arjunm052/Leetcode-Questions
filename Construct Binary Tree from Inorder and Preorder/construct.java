@@ -40,7 +40,7 @@ public class construct {
 
         // index of root in Inorder
         int inRoot = inMap.get(root.val);
-        // Number remaining on the left side of root
+        // calculating the numbers left
         int numsLeft = inRoot - inStart;
 
         // build left side of tree
