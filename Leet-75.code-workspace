@@ -5,6 +5,10 @@
     }
   ],
   "settings": {
-    "java.project.sourcePaths": ["Word Search", "Valid Palindrome"]
+    "java.project.sourcePaths": [
+      "Word Search",
+      "Valid Palindrome",
+      "Maximum Product Subarray"
+    ]
   }
 }
