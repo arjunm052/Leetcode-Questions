@@ -8,7 +8,8 @@
     "java.project.sourcePaths": [
       "Word Search",
       "Valid Palindrome",
-      "Maximum Product Subarray"
+      "Maximum Product Subarray",
+      ""
     ]
   }
 }
