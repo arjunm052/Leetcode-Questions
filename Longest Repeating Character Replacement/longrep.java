@@ -5,7 +5,7 @@ public class longrep {
 
     }
 
-    // TC - O(N)
+    // TC - O(N) We use the sliding window technique
     public static int longestRepeating(String str, int k) {
         // Length of string
         int n = str.length();
